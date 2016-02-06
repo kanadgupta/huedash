@@ -1,6 +1,6 @@
 # HueDash
 
-This Python enables you to use an Amazon Dash button to control Philips Hue lightbulbs in a variety of ways.
+This Python code enables you to use an Amazon Dash button to control Philips Hue lightbulbs in a variety of ways.
 
 Documentation
 -------------
