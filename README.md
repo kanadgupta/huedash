@@ -12,7 +12,7 @@ Documentation
 
 ###Scapy Installation
 
-Click [here]() to download a ZIP of the latest version of Scapy (used for packet sniffing) and within the directory that you downloaded the ZIP to:
+Click [here]() to download a ZIP of the latest version of Scapy (used for packet sniffing). Navigate to the directory that you downloaded the ZIP to:
 
 ```bash
 $ unzip scapy-2.*.zip
