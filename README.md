@@ -10,7 +10,7 @@ Documentation
 - Python 2.6+
 
 ###Philips Hue Setup
-This code uses [beautifulhue](https://github.com/allanbunch/beautifulhue), a Python library for the Philips Hue Lighting System API. 
+This code uses Allan Bunch's [beautifulhue](https://github.com/allanbunch/beautifulhue), a Python library for the Philips Hue Lighting System API. Read [his wiki](https://github.com/allanbunch/beautifulhue/wiki/Example:-Connect-to-the-Bridge) on connecting to the Philips Hue Bridge. The repo's readme has great documentation on how to interface with the Bridge, Lights, Groups, Schedules, Configuration, etc.
 
 ###Scapy Installation
 
