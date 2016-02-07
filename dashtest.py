@@ -6,8 +6,6 @@ from beautifulhue.api import Bridge
 import datetime
 import time
 import csv
-import sys
-
 
 username = 'beautifulhuetest'
 bridge = Bridge(device={'ip':'10.1.10.18'}, user={'name':username})
