@@ -40,7 +40,7 @@ def groupDashLightSwitch(num=0):
     switchedTo = "off" if isOn else "on"
     bridge.group.update(action)
     print "Lights turned " + switchedTo + " - Timestamp: " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-    logHandler("Lights turned " + switchedTo)
+    logHandler("Group " + num + " turned " + switchedTo)
 
 def oneDashLightSwitch(num=2):
     resource = {'which':num}
@@ -57,7 +57,7 @@ def oneDashLightSwitch(num=2):
     switchedTo = "off" if isOn else "on"
     bridge.light.update(state)
     print "One light turned " + switchedTo + " - Timestamp: " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-    logHandler("One light turned " + switchedTo)
+    logHandler("Light " + num + " turned " + switchedTo)
 
 def recursiveSniffer():
     try:
