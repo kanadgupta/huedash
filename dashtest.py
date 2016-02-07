@@ -25,12 +25,12 @@ def arp_display(pkt):
       print "ARP Probe from unknown device: " + pkt[ARP].hwsrc
       logHandler("ARP Probe from unknown device: " + pkt[ARP].hwsrc)
 
-def dashLightSwitch():
-    resource = {'which':0}
+def groupDashLightSwitch(num=0):
+    resource = {'which':num}
     data = bridge.group.get(resource)
     isOn = data['resource']['action']['on']
     action = {
-                 'which':0,
+                 'which':num,
                  'data':{
                      'action':{
                          'on':not isOn
@@ -42,12 +42,12 @@ def dashLightSwitch():
     print "Lights turned " + switchedTo + " - Timestamp: " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
     logHandler("Lights turned " + switchedTo)
 
-def oneDashLightSwitch():
-    resource = {'which':2}
+def oneDashLightSwitch(num=2):
+    resource = {'which':num}
     data = bridge.light.get(resource)
     isOn = data['resource']['state']['on']
     state = {
-                 'which':2,
+                 'which':num,
                  'data':{
                      'state':{
                          'on':not isOn
