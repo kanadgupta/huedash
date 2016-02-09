@@ -6,6 +6,7 @@ from beautifulhue.api import Bridge
 import datetime
 import time
 import csv
+import os
 
 username = 'beautifulhuetest'
 bridge = Bridge(device={'ip':'10.1.10.18'}, user={'name':username})
@@ -22,7 +23,7 @@ def arp_display(pkt):
           oneDashLightSwitch()
 
     else:
-      print "ARP Probe from unknown device: " + pkt[ARP].hwsrc
+      # print "ARP Probe from unknown device: " + pkt[ARP].hwsrc
       logHandler("ARP Probe from unknown device: " + pkt[ARP].hwsrc)
 
 def groupDashLightSwitch(num=0):
@@ -78,8 +79,8 @@ def logHandler(inputString='default'):
         a.writerow(logRow)
 
 
-print "Beginning sniffing"
-logHandler("Beginning sniffing")
+print "Beginning sniffing with PID " + str(os.getpid()) 
+logHandler("Beginning sniffing with PID " + str(os.getpid()))
 recursiveSniffer()
 print "Fin"
 logHandler("Sniff complete")
