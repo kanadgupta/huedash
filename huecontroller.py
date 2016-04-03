@@ -157,9 +157,17 @@ def strobeGroup(num=2):
     noEffect = {
                  'which':num,
                  'data':{
-                     'action':defaultState
+                     'action':{
+                         'on':True,
+                         'bri': 254,
+                         "xy": [
+                              0.4868,
+                              0.4406
+                            ]
+                         'colormode': "xy"
+                     }
                  }
-            }
+             }
     bridge.group.update(noEffect)
     dimState = {
                  'which':num,
