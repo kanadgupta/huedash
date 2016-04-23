@@ -160,11 +160,8 @@ def strobeGroup(num=2):
                      'action':{
                          'on':True,
                          'bri': 254,
-                         "xy": [
-                              0.4868,
-                              0.4406
-                            ]
-                         'colormode': "xy"
+                         'ct': 359,
+                         'colormode': 'ct'
                      }
                  }
              }
@@ -218,16 +215,14 @@ def strobeGroup(num=2):
     colorStates = [pinkState, blueState]
     colorIndex = 0
 
-    timeout = time.time() + 10   # 5 seconds from now
+    timeout = time.time() + 10   # 10 seconds from now
     while time.time() < timeout:
-        # state = dimState if briFlag else briState
         bridge.group.update(colorStates[colorIndex])
-        # briFlag = not briFlag
-        time.sleep(.125)
-        bridge.group.update(dimState)
-        time.sleep(.125)
+        # bridge.group.update(noEffect)
+        time.sleep(.25)
         colorIndex = (colorIndex + 1) % 2
     print "Back to normal - " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+    time.sleep(1)
     bridge.group.update(noEffect)
     print "It should have done it!!!!"
 
